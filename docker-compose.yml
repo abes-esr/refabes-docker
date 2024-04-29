@@ -1,0 +1,112 @@
+version: '3'
+services:
+
+    openrefine-alignements:
+        image: abes/openrefine376
+		profiles: ["refine-alignements"]
+        volumes:
+            - ./volumes/refine-alignements:/mnt/refine
+            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+        ports:
+            - "13334:3333"
+        env_file:
+            - openrefine.env
+        restart: unless-stopped
+		
+    openrefine-bacon:
+        image: abes/openrefine376
+		profiles: ["refbacon"]
+        volumes:
+            - ./volumes/refbacon:/mnt/refine
+            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+        ports:
+            - "13336:3333"
+        env_file:
+            - openrefine.env
+        restart: unless-stopped
+		
+    openrefine-hub:
+        image: abes/openrefine376
+		profiles: ["refhub"]
+        volumes:
+            - ./volumes/refhub:/mnt/refine
+            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+        ports:
+            - "13337:3333"
+        env_file:
+            - openrefine.env
+        restart: unless-stopped
+
+    openrefine-idref:
+        image: abes/openrefine376
+		profiles: ["refidref"]
+        volumes:
+            - ./volumes/refidref:/mnt/refine
+            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+        ports:
+            - "13338:3333"
+        env_file:
+            - openrefine.env
+        restart: unless-stopped
+
+    openrefine-movies:
+        image: abes/openrefine376
+		profiles: ["refmovies"]
+        volumes:
+            - ./volumes/refmovies:/mnt/refine
+            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+        ports:
+            - "13341:3333"
+        env_file:
+            - openrefine.env
+        restart: unless-stopped
+		
+    openrefine-reforcid:
+        image: abes/openrefine-3.7.7
+		profiles: ["reforcid"]
+        volumes:
+            - ./volumes/reforcid:/mnt/refine
+            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+        ports:
+            - "13340:3333"
+        env_file:
+            - openrefine.env
+        restart: unless-stopped
+		
+    openrefine-refperios:
+        image: abes/openrefine376
+		profiles: ["refine-perios"]
+        volumes:
+            - ./volumes/refine-perios:/mnt/refine
+            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+        ports:
+            - "13333:3333"
+        env_file:
+            - openrefine.env
+        restart: unless-stopped
+		
+    openrefine-sudoc:
+        image: abes/openrefine376
+		profiles: ["refsudoc"]
+        volumes:
+            - ./volumes/refsudoc:/mnt/refine
+            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+        ports:
+            - "13339:3333"
+        env_file:
+            - openrefine.env
+        restart: unless-stopped
+		
+    openrefine-theses:
+        image: abes/openrefine376
+		profiles: ["reftheses"]
+        volumes:
+            - ./volumes/reftheses:/mnt/refine
+            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+        ports:
+            - "13340:3333"
+        env_file:
+            - openrefine.env
+        restart: unless-stopped
+		
+		
