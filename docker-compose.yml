@@ -2,7 +2,7 @@ services:
 
     openrefine-alignements:
         image: abes/openrefine376
-		profiles: ["refine-alignements"]
+        profiles: ["refine-alignements"]
         volumes:
             - ./volumes/refine-alignements:/mnt/refine
             - ./refine.ini:/./openrefine-$RELEASE/refine.ini
@@ -11,10 +11,10 @@ services:
         env_file:
             - openrefine.env
         restart: unless-stopped
-		
+
     openrefine-bacon:
         image: abes/openrefine376
-		profiles: ["refbacon"]
+        profiles: ["refbacon"]
         volumes:
             - ./volumes/refbacon:/mnt/refine
             - ./refine.ini:/./openrefine-$RELEASE/refine.ini
@@ -23,10 +23,10 @@ services:
         env_file:
             - openrefine.env
         restart: unless-stopped
-		
+
     openrefine-hub:
         image: abes/openrefine376
-		profiles: ["refhub"]
+        profiles: ["refhub"]
         volumes:
             - ./volumes/refhub:/mnt/refine
             - ./refine.ini:/./openrefine-$RELEASE/refine.ini
@@ -38,7 +38,7 @@ services:
 
     openrefine-idref:
         image: abes/openrefine376
-		profiles: ["refidref"]
+        profiles: ["refidref"]
         volumes:
             - ./volumes/refidref:/mnt/refine
             - ./refine.ini:/./openrefine-$RELEASE/refine.ini
@@ -50,7 +50,7 @@ services:
 
     openrefine-movies:
         image: abes/openrefine376
-		profiles: ["refmovies"]
+        profiles: ["refmovies"]
         volumes:
             - ./volumes/refmovies:/mnt/refine
             - ./refine.ini:/./openrefine-$RELEASE/refine.ini
@@ -59,10 +59,10 @@ services:
         env_file:
             - openrefine.env
         restart: unless-stopped
-		
+
     openrefine-reforcid:
         image: abes/openrefine-3.7.7
-		profiles: ["reforcid"]
+        profiles: ["reforcid"]
         volumes:
             - ./volumes/reforcid:/mnt/refine
             - ./refine.ini:/./openrefine-$RELEASE/refine.ini
@@ -71,10 +71,10 @@ services:
         env_file:
             - openrefine.env
         restart: unless-stopped
-		
+
     openrefine-refperios:
         image: abes/openrefine376
-		profiles: ["refine-perios"]
+        profiles: ["refine-perios"]
         volumes:
             - ./volumes/refine-perios:/mnt/refine
             - ./refine.ini:/./openrefine-$RELEASE/refine.ini
@@ -83,10 +83,10 @@ services:
         env_file:
             - openrefine.env
         restart: unless-stopped
-		
+
     openrefine-sudoc:
         image: abes/openrefine376
-		profiles: ["refsudoc"]
+        profiles: ["refsudoc"]
         volumes:
             - ./volumes/refsudoc:/mnt/refine
             - ./refine.ini:/./openrefine-$RELEASE/refine.ini
@@ -95,10 +95,10 @@ services:
         env_file:
             - openrefine.env
         restart: unless-stopped
-		
+
     openrefine-theses:
         image: abes/openrefine376
-		profiles: ["reftheses"]
+        profiles: ["reftheses"]
         volumes:
             - ./volumes/reftheses:/mnt/refine
             - ./refine.ini:/./openrefine-$RELEASE/refine.ini
@@ -107,5 +107,3 @@ services:
         env_file:
             - openrefine.env
         restart: unless-stopped
-		
-		
