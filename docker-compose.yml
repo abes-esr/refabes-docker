@@ -13,8 +13,8 @@ services:
             - "13334:3333"
         restart: unless-stopped
         labels:
-          # pour que les mises à jour de cette image soient auto-déployées par watchtower
-          - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            # pour que les mises à jour de cette image soient auto-déployées par watchtower
+            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
     openrefine-bacon:
         image: abes/openrefine
@@ -29,8 +29,8 @@ services:
             - "13336:3333"
         restart: unless-stopped
         labels:
-          # pour que les mises à jour de cette image soient auto-déployées par watchtower
-          - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            # pour que les mises à jour de cette image soient auto-déployées par watchtower
+            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
     openrefine-hub:
         image: abes/openrefine
@@ -45,8 +45,8 @@ services:
             - "13337:3333"
         restart: unless-stopped
         labels:
-          # pour que les mises à jour de cette image soient auto-déployées par watchtower
-          - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            # pour que les mises à jour de cette image soient auto-déployées par watchtower
+            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-idref:
         image: abes/openrefine
@@ -61,8 +61,8 @@ services:
             - "13338:3333"
         restart: unless-stopped
         labels:
-          # pour que les mises à jour de cette image soient auto-déployées par watchtower
-          - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            # pour que les mises à jour de cette image soient auto-déployées par watchtower
+            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
       
     openrefine-movies:
@@ -78,8 +78,8 @@ services:
             - "13341:3333"
         restart: unless-stopped
         labels:
-          # pour que les mises à jour de cette image soient auto-déployées par watchtower
-          - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            # pour que les mises à jour de cette image soient auto-déployées par watchtower
+            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-reforcid:
         image: abes/openrefine
@@ -94,8 +94,8 @@ services:
             - "13340:3333"
         restart: unless-stopped
         labels:
-          # pour que les mises à jour de cette image soient auto-déployées par watchtower
-          - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            # pour que les mises à jour de cette image soient auto-déployées par watchtower
+            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-refperios:
         image: abes/openrefine
@@ -110,8 +110,8 @@ services:
             - "13333:3333"
         restart: unless-stopped
         labels:
-          # pour que les mises à jour de cette image soient auto-déployées par watchtower
-          - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            # pour que les mises à jour de cette image soient auto-déployées par watchtower
+            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-sudoc:
         image: abes/openrefine
@@ -126,8 +126,8 @@ services:
             - "13339:3333"
         restart: unless-stopped
         labels:
-          # pour que les mises à jour de cette image soient auto-déployées par watchtower
-          - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            # pour que les mises à jour de cette image soient auto-déployées par watchtower
+            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-theses:
         image: abes/openrefine
@@ -142,8 +142,8 @@ services:
             - "13340:3333"
         restart: unless-stopped
         labels:
-          # pour que les mises à jour de cette image soient auto-déployées par watchtower
-          - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            # pour que les mises à jour de cette image soient auto-déployées par watchtower
+            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
 
     openrefine-watchtower:
