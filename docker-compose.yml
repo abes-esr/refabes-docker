@@ -1,7 +1,7 @@
 services:
 
     openrefine-alignements:
-        image: abes/openrefine
+        image: abesesr/openrefine
         profiles: ["refine-alignements"]
         mem_limit: ${OPENREFINE_MEM_LIMIT}
         memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
@@ -17,7 +17,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
     openrefine-bacon:
-        image: abes/openrefine
+        image: abesesr/openrefine
         profiles: ["refbacon"]
         mem_limit: ${OPENREFINE_MEM_LIMIT}
         memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
@@ -33,7 +33,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
     openrefine-hub:
-        image: abes/openrefine
+        image: abesesr/openrefine
         profiles: ["refhub"]
         mem_limit: ${OPENREFINE_MEM_LIMIT}
         memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
@@ -49,7 +49,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-idref:
-        image: abes/openrefine
+        image: abesesr/openrefine
         profiles: ["refidref"]
         mem_limit: ${OPENREFINE_MEM_LIMIT}
         memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
@@ -66,7 +66,7 @@ services:
 
       
     openrefine-movies:
-        image: abes/openrefine
+        image: abesesr/openrefine
         profiles: ["refmovies"]
         mem_limit: ${OPENREFINE_MEM_LIMIT}
         memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
@@ -82,7 +82,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-reforcid:
-        image: abes/openrefine
+        image: abesesr/openrefine
         profiles: ["reforcid"]
         mem_limit: ${OPENREFINE_MEM_LIMIT}
         memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
@@ -98,7 +98,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-refperios:
-        image: abes/openrefine
+        image: abesesr/openrefine
         profiles: ["refine-perios"]
         mem_limit: ${OPENREFINE_MEM_LIMIT}
         memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
@@ -114,7 +114,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-sudoc:
-        image: abes/openrefine
+        image: abesesr/openrefine
         profiles: ["refsudoc"]
         mem_limit: ${OPENREFINE_MEM_LIMIT}
         memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
@@ -130,7 +130,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-theses:
-        image: abes/openrefine
+        image: abesesr/openrefine
         profiles: ["reftheses"]
         mem_limit: ${OPENREFINE_MEM_LIMIT}
         memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
