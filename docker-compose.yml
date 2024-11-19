@@ -3,13 +3,14 @@ services:
     openrefine-alignements:
         image: abes/openrefine
         profiles: ["refine-alignements"]
+        mem_limit: ${OPENREFINE_MEM_LIMIT}
+        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
+        cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
             - ./volumes/refine-alignements:/mnt/refine
-            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "13334:3333"
-        env_file:
-            - openrefine.env
         restart: unless-stopped
         labels:
       # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -18,13 +19,14 @@ services:
     openrefine-bacon:
         image: abes/openrefine
         profiles: ["refbacon"]
+        mem_limit: ${OPENREFINE_MEM_LIMIT}
+        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
+        cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
             - ./volumes/refbacon:/mnt/refine
-            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "13336:3333"
-        env_file:
-            - openrefine.env
         restart: unless-stopped
         labels:
       # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -33,13 +35,14 @@ services:
     openrefine-hub:
         image: abes/openrefine
         profiles: ["refhub"]
+        mem_limit: ${OPENREFINE_MEM_LIMIT}
+        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
+        cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
             - ./volumes/refhub:/mnt/refine
-            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "13337:3333"
-        env_file:
-            - openrefine.env
         restart: unless-stopped
         labels:
       # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -48,13 +51,14 @@ services:
     openrefine-idref:
         image: abes/openrefine
         profiles: ["refidref"]
+        mem_limit: ${OPENREFINE_MEM_LIMIT}
+        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
+        cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
             - ./volumes/refidref:/mnt/refine
-            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "13338:3333"
-        env_file:
-            - openrefine.env
         restart: unless-stopped
         labels:
       # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -64,13 +68,14 @@ services:
     openrefine-movies:
         image: abes/openrefine
         profiles: ["refmovies"]
+        mem_limit: ${OPENREFINE_MEM_LIMIT}
+        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
+        cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
             - ./volumes/refmovies:/mnt/refine
-            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "13341:3333"
-        env_file:
-            - openrefine.env
         restart: unless-stopped
         labels:
       # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -79,13 +84,14 @@ services:
     openrefine-reforcid:
         image: abes/openrefine
         profiles: ["reforcid"]
+        mem_limit: ${OPENREFINE_MEM_LIMIT}
+        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
+        cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
             - ./volumes/reforcid:/mnt/refine
-            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "13340:3333"
-        env_file:
-            - openrefine.env
         restart: unless-stopped
         labels:
       # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -94,13 +100,14 @@ services:
     openrefine-refperios:
         image: abes/openrefine
         profiles: ["refine-perios"]
+        mem_limit: ${OPENREFINE_MEM_LIMIT}
+        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
+        cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
             - ./volumes/refine-perios:/mnt/refine
-            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "13333:3333"
-        env_file:
-            - openrefine.env
         restart: unless-stopped
         labels:
       # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -109,13 +116,14 @@ services:
     openrefine-sudoc:
         image: abes/openrefine
         profiles: ["refsudoc"]
+        mem_limit: ${OPENREFINE_MEM_LIMIT}
+        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
+        cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
             - ./volumes/refsudoc:/mnt/refine
-            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "13339:3333"
-        env_file:
-            - openrefine.env
         restart: unless-stopped
         labels:
       # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -124,13 +132,14 @@ services:
     openrefine-theses:
         image: abes/openrefine
         profiles: ["reftheses"]
+        mem_limit: ${OPENREFINE_MEM_LIMIT}
+        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
+        cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
             - ./volumes/reftheses:/mnt/refine
-            - ./refine.ini:/./openrefine-$RELEASE/refine.ini
+            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "13340:3333"
-        env_file:
-            - openrefine.env
         restart: unless-stopped
         labels:
       # pour que les mises à jour de cette image soient auto-déployées par watchtower
