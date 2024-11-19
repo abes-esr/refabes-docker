@@ -13,7 +13,7 @@ Disposer de :
 
 Ce projet se compose de trois fichiers, le premier "docker-compose.yml" regroupe les paramètres, répertoires et profils des instances Openrefine.
 Le deuxième fichier "refine.ini", est le fichier de configuration de la mémoire des instances.
-Le dernier fichier ".env-dist" est un template pour la creéation du fichier .env qui sera utilisé pour les variables d'environnement
+Le dernier fichier ".env-dist" est un template pour la création du fichier .env qui sera utilisé pour les variables d'environnement.
 
 
 ## Installation 
