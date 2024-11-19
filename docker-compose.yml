@@ -1,7 +1,7 @@
 services:
 
     openrefine-alignements:
-        image: abes/openrefine376
+        image: abes/openrefine
         profiles: ["refine-alignements"]
         volumes:
             - ./volumes/refine-alignements:/mnt/refine
@@ -16,7 +16,7 @@ services:
       - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
     openrefine-bacon:
-        image: abes/openrefine376
+        image: abes/openrefine
         profiles: ["refbacon"]
         volumes:
             - ./volumes/refbacon:/mnt/refine
@@ -31,7 +31,7 @@ services:
       - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
     openrefine-hub:
-        image: abes/openrefine376
+        image: abes/openrefine
         profiles: ["refhub"]
         volumes:
             - ./volumes/refhub:/mnt/refine
@@ -46,7 +46,7 @@ services:
       - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-idref:
-        image: abes/openrefine376
+        image: abes/openrefine
         profiles: ["refidref"]
         volumes:
             - ./volumes/refidref:/mnt/refine
@@ -62,7 +62,7 @@ services:
 
       
     openrefine-movies:
-        image: abes/openrefine376
+        image: abes/openrefine
         profiles: ["refmovies"]
         volumes:
             - ./volumes/refmovies:/mnt/refine
@@ -77,7 +77,7 @@ services:
       - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-reforcid:
-        image: abes/openrefine-3.7.7
+        image: abes/openrefine
         profiles: ["reforcid"]
         volumes:
             - ./volumes/reforcid:/mnt/refine
@@ -92,7 +92,7 @@ services:
       - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-refperios:
-        image: abes/openrefine376
+        image: abes/openrefine
         profiles: ["refine-perios"]
         volumes:
             - ./volumes/refine-perios:/mnt/refine
@@ -107,7 +107,7 @@ services:
       - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-sudoc:
-        image: abes/openrefine376
+        image: abes/openrefine
         profiles: ["refsudoc"]
         volumes:
             - ./volumes/refsudoc:/mnt/refine
@@ -122,7 +122,7 @@ services:
       - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-theses:
-        image: abes/openrefine376
+        image: abes/openrefine
         profiles: ["reftheses"]
         volumes:
             - ./volumes/reftheses:/mnt/refine
