@@ -146,7 +146,7 @@ services:
           - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
 
-    movies-watchtower:
+    openrefine-watchtower:
     image: containrrr/watchtower:1.4.0
     container_name: openrefine-watchtower
     profiles: ["openrefine-watchtower"]
