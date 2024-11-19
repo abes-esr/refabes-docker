@@ -7,7 +7,6 @@ refabes-docker est un projet qui a pour vocation de regrouper les différentes i
 ## Prérequis
 Ce projet se compose de trois fichiers, le premier "docker-compose.yml" regroupe les paramètres, répertoires et profils des instances Openrefine.
 Le deuxième fichier "refine.ini", est le fichier de configuration de la mémoire des instances.
-Le dernier fichier "openrefine.env", contient les variables d'environnement que l'on souhaite appliquer.
 
 ## Installation 
 
