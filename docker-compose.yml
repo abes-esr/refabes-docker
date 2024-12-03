@@ -1,64 +1,64 @@
 services:
 
     openrefine-alignements:
+        name: refine-alignements
         image: abesesr/openrefine:develop
         profiles: ["refine-alignements"]
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${OPENREFINE_ALIGNEMENT_MEM_LIMIT}
+        cpus: ${OPENREFINE_ALIGNEMENT_CPU_LIMIT}
         volumes:
             - ./volumes/refine-alignements:/mnt/refine
             - ./refine.ini:/./openrefine/refine.ini
         ports:
-            - "13334:3333"
+            - "${OPENREFINE_ALIGNEMENT_PORT}:3333"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
     openrefine-bacon:
+        name: refbacon
         image: abesesr/openrefine:develop
         profiles: ["refbacon"]
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${OPENREFINE_BACON_MEM_LIMIT}
+        cpus: ${OPENREFINE_BACON_CPU_LIMIT}
         volumes:
             - ./volumes/refbacon:/mnt/refine
             - ./refine.ini:/./openrefine/refine.ini
         ports:
-            - "13336:3333"
+            - "${OPENREFINE_BACON_PORT}:3333"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
     openrefine-hub:
+        name: refhub
         image: abesesr/openrefine:develop
         profiles: ["refhub"]
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${OPENREFINE_HUB_MEM_LIMIT}
+        cpus: ${OPENREFINE_HUB_CPU_LIMIT}
         volumes:
             - ./volumes/refhub:/mnt/refine
             - ./refine.ini:/./openrefine/refine.ini
         ports:
-            - "13337:3333"
+            - "${OPENREFINE_HUB_PORT}:3333"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-idref:
+        name: refidref
         image: abesesr/openrefine:develop
         profiles: ["refidref"]
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${OPENREFINE_IDREF_MEM_LIMIT}
+        cpus: ${OPENREFINE_IDREF_CPU_LIMIT}
         volumes:
             - ./volumes/refidref:/mnt/refine
             - ./refine.ini:/./openrefine/refine.ini
         ports:
-            - "13338:3333"
+            - "${OPENREFINE_IDREF_PORT}:3333"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -66,80 +66,80 @@ services:
 
       
     openrefine-movies:
+        name: refmovies
         image: abesesr/openrefine:develop
         profiles: ["refmovies"]
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${OPENREFINE_MOVIES_MEM_LIMIT}
+        cpus: ${OPENREFINE_MOVIES_CPU_LIMIT}
         volumes:
             - ./volumes/refmovies:/mnt/refine
             - ./refine.ini:/./openrefine/refine.ini
         ports:
-            - "13341:3333"
+            - "${OPENREFINE_MOVIES_PORT}:3333"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-reforcid:
+        name: reforcid
         image: abesesr/openrefine:develop
         profiles: ["reforcid"]
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${OPENREFINE_ORCID_MEM_LIMIT}
+        cpus: ${OPENREFINE_ORCID_CPU_LIMIT}
         volumes:
             - ./volumes/reforcid:/mnt/refine
             - ./refine.ini:/./openrefine/refine.ini
         ports:
-            - "13340:3333"
+            - "${OPENREFINE_ORCID_PORT}:3333"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-refperios:
+        name: refperios
         image: abesesr/openrefine:develop
         profiles: ["refine-perios"]
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${OPENREFINE_PERIOS_MEM_LIMIT}
+        cpus: ${OPENREFINE_PERIOS_CPU_LIMIT}
         volumes:
             - ./volumes/refine-perios:/mnt/refine
             - ./refine.ini:/./openrefine/refine.ini
         ports:
-            - "13333:3333"
+            - "${OPENREFINE_PERIOS_PORT}:3333"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-sudoc:
+        name: refsudoc
         image: abesesr/openrefine:develop
         profiles: ["refsudoc"]
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${OPENREFINE_SUDOC_MEM_LIMIT}
+        cpus: ${OPENREFINE_SUDOC_CPU_LIMIT}
         volumes:
             - ./volumes/refsudoc:/mnt/refine
             - ./refine.ini:/./openrefine/refine.ini
         ports:
-            - "13339:3333"
+            - "${OPENREFINE_SUDOC_PORT}:3333"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-theses:
+        name: reftheses
         image: abesesr/openrefine:develop
         profiles: ["reftheses"]
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${OPENREFINE_THESES_MEM_LIMIT}
+        cpus: ${OPENREFINE_THESES_CPU_LIMIT}
         volumes:
             - ./volumes/reftheses:/mnt/refine
             - ./refine.ini:/./openrefine/refine.ini
         ports:
-            - "13340:3333"
+            - "${OPENREFINE_THESES_PORT}:3333"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -149,7 +149,6 @@ services:
     openrefine-watchtower:
         image: containrrr/watchtower:1.4.0
         container_name: openrefine-watchtower
-        profiles: ["openrefine-watchtower"]
         restart: unless-stopped
         networks:
          - default
