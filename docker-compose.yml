@@ -2,7 +2,7 @@ services:
 
     openrefine-alignements:
         name: refine-alignements
-        image: abesesr/openrefine:develop
+        image: abesesr/openrefine:${OPENREFINE_ALIGNEMENT_VERSION}
         profiles: ["refine-alignements"]
         mem_limit: ${OPENREFINE_ALIGNEMENT_MEM_LIMIT}
         cpus: ${OPENREFINE_ALIGNEMENT_CPU_LIMIT}
@@ -18,7 +18,7 @@ services:
 
     openrefine-bacon:
         name: refbacon
-        image: abesesr/openrefine:develop
+        image: abesesr/openrefine:${OPENREFINE_BACON_VERSION}
         profiles: ["refbacon"]
         mem_limit: ${OPENREFINE_BACON_MEM_LIMIT}
         cpus: ${OPENREFINE_BACON_CPU_LIMIT}
@@ -34,7 +34,7 @@ services:
 
     openrefine-hub:
         name: refhub
-        image: abesesr/openrefine:develop
+        image: abesesr/openrefine:${OPENREFINE_HUB_VERSION}
         profiles: ["refhub"]
         mem_limit: ${OPENREFINE_HUB_MEM_LIMIT}
         cpus: ${OPENREFINE_HUB_CPU_LIMIT}
@@ -50,7 +50,7 @@ services:
       
     openrefine-idref:
         name: refidref
-        image: abesesr/openrefine:develop
+        image: abesesr/openrefine:${OPENREFINE_IDREF_VERSION}
         profiles: ["refidref"]
         mem_limit: ${OPENREFINE_IDREF_MEM_LIMIT}
         cpus: ${OPENREFINE_IDREF_CPU_LIMIT}
@@ -67,7 +67,7 @@ services:
       
     openrefine-movies:
         name: refmovies
-        image: abesesr/openrefine:develop
+        image: abesesr/openrefine:${OPENREFINE_MOVIES_VERSION}
         profiles: ["refmovies"]
         mem_limit: ${OPENREFINE_MOVIES_MEM_LIMIT}
         cpus: ${OPENREFINE_MOVIES_CPU_LIMIT}
@@ -83,7 +83,7 @@ services:
       
     openrefine-reforcid:
         name: reforcid
-        image: abesesr/openrefine:develop
+        image: abesesr/openrefine:${OPENREFINE_ORCID_VERSION}
         profiles: ["reforcid"]
         mem_limit: ${OPENREFINE_ORCID_MEM_LIMIT}
         cpus: ${OPENREFINE_ORCID_CPU_LIMIT}
@@ -99,7 +99,7 @@ services:
       
     openrefine-refperios:
         name: refperios
-        image: abesesr/openrefine:develop
+        image: abesesr/openrefine:${OPENREFINE_PERIOS_VERSION}
         profiles: ["refine-perios"]
         mem_limit: ${OPENREFINE_PERIOS_MEM_LIMIT}
         cpus: ${OPENREFINE_PERIOS_CPU_LIMIT}
@@ -115,7 +115,7 @@ services:
       
     openrefine-sudoc:
         name: refsudoc
-        image: abesesr/openrefine:develop
+        image: abesesr/openrefine:${OPENREFINE_SUDOC_VERSION}
         profiles: ["refsudoc"]
         mem_limit: ${OPENREFINE_SUDOC_MEM_LIMIT}
         cpus: ${OPENREFINE_SUDOC_CPU_LIMIT}
@@ -131,7 +131,7 @@ services:
       
     openrefine-theses:
         name: reftheses
-        image: abesesr/openrefine:develop
+        image: abesesr/openrefine:${OPENREFINE_THESES_VERSION}
         profiles: ["reftheses"]
         mem_limit: ${OPENREFINE_THESES_MEM_LIMIT}
         cpus: ${OPENREFINE_THESES_CPU_LIMIT}
