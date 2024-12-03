@@ -65,7 +65,8 @@ rm -fr volumes
 
 Pour ajuster l'allocation de ressources pour les conteneurs (par exemple, mémoire, CPU), vous pouvez modifier la valeur des variables d'environnement suivantes dans votre fichier ``.env`` :
 
-- `OPENREFINE_MEM_LIMIT`: Mémoire allouée au conteneur (par exemple: "512m" pour 512 Mo), valeur par défaut "5g".
-- `OPENREFINE_MEMSWAP_LIMIT`: Quantité totale de mémoire et de swap que le conteneur est autorisé à utiliser. Si vous définissez cette valeur à 0, cela signifie que le swap est désactivé pour le conteneur.
-- `OPENREFINE_CPU_LIMIT`: CPU alloué au conteneur (par exemple: "0.5" pour allouer 50% d'un CPU), valeur par défaut "5".
+- `OPENREFINE_REFXXXX_MEM_LIMIT`: Mémoire allouée au conteneur (par exemple: "512m" pour 512 Mo), valeur par défaut "5g".
+- `OPENREFINE_REFXXXX_CPU_LIMIT`: CPU alloué au conteneur (par exemple: "0.5" pour allouer 50% d'un CPU), valeur par défaut "5".
+- `OPENREFINE_REFXXXX_PORT`: Définit le port à utiliser.
+- `OPENREFINE_REFXXXX_VERSION` : Définit la version de l'image à utiliser. 
 
