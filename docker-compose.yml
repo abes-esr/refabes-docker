@@ -153,9 +153,8 @@ services:
         restart: unless-stopped
         networks:
          - default
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        memswap_limit: ${OPENREFINE_MEMSWAP_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${OPENREFINE_WATCHTOWER_MEM_LIMIT}
+        cpus: ${OPENREFINE_WATCHTOWER_CPU_LIMIT}
         volumes:
          - /var/run/docker.sock:/var/run/docker.sock
         environment:
