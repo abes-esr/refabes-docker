@@ -1,7 +1,7 @@
 services:
 
     openrefine-alignements:
-        name: refine-alignements
+        container_name: refine-alignements
         image: abesesr/openrefine:${OPENREFINE_ALIGNEMENT_VERSION}
         profiles: ["refine-alignements"]
         mem_limit: ${OPENREFINE_ALIGNEMENT_MEM_LIMIT}
@@ -17,7 +17,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
     openrefine-bacon:
-        name: refbacon
+        container_name: refbacon
         image: abesesr/openrefine:${OPENREFINE_BACON_VERSION}
         profiles: ["refbacon"]
         mem_limit: ${OPENREFINE_BACON_MEM_LIMIT}
@@ -33,7 +33,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
 
     openrefine-hub:
-        name: refhub
+        container_name: refhub
         image: abesesr/openrefine:${OPENREFINE_HUB_VERSION}
         profiles: ["refhub"]
         mem_limit: ${OPENREFINE_HUB_MEM_LIMIT}
@@ -49,7 +49,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-idref:
-        name: refidref
+        container_name: refidref
         image: abesesr/openrefine:${OPENREFINE_IDREF_VERSION}
         profiles: ["refidref"]
         mem_limit: ${OPENREFINE_IDREF_MEM_LIMIT}
@@ -66,7 +66,7 @@ services:
 
       
     openrefine-movies:
-        name: refmovies
+        container_name: refmovies
         image: abesesr/openrefine:${OPENREFINE_MOVIES_VERSION}
         profiles: ["refmovies"]
         mem_limit: ${OPENREFINE_MOVIES_MEM_LIMIT}
@@ -82,7 +82,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-reforcid:
-        name: reforcid
+        container_name: reforcid
         image: abesesr/openrefine:${OPENREFINE_ORCID_VERSION}
         profiles: ["reforcid"]
         mem_limit: ${OPENREFINE_ORCID_MEM_LIMIT}
@@ -98,7 +98,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-refperios:
-        name: refperios
+        container_name: refperios
         image: abesesr/openrefine:${OPENREFINE_PERIOS_VERSION}
         profiles: ["refine-perios"]
         mem_limit: ${OPENREFINE_PERIOS_MEM_LIMIT}
@@ -114,7 +114,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-sudoc:
-        name: refsudoc
+        container_name: refsudoc
         image: abesesr/openrefine:${OPENREFINE_SUDOC_VERSION}
         profiles: ["refsudoc"]
         mem_limit: ${OPENREFINE_SUDOC_MEM_LIMIT}
@@ -130,7 +130,7 @@ services:
             - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
       
     openrefine-theses:
-        name: reftheses
+        container_name: reftheses
         image: abesesr/openrefine:${OPENREFINE_THESES_VERSION}
         profiles: ["reftheses"]
         mem_limit: ${OPENREFINE_THESES_MEM_LIMIT}
@@ -149,6 +149,7 @@ services:
     openrefine-watchtower:
         image: containrrr/watchtower:1.4.0
         container_name: openrefine-watchtower
+        profiles: ["watchtower"]
         restart: unless-stopped
         networks:
          - default
