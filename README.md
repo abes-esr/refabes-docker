@@ -7,12 +7,10 @@ refabes-docker est un projet qui a pour vocation de regrouper les différentes i
 ## Prérequis
 
 Disposer de :
-- ``refine.ini``
 - ``docker-compose``
 - ``.env-dist``
 
-Ce projet se compose de trois fichiers, le premier "docker-compose.yml" regroupe les paramètres, répertoires et profils des instances Openrefine.
-Le deuxième fichier "refine.ini", est le fichier de configuration de la mémoire des instances.
+Ce projet se compose de deux fichiers, le premier "docker-compose.yml" regroupe les paramètres, répertoires et profils des instances Openrefine.
 Le dernier fichier ".env-dist" est un template pour la création du fichier .env qui sera utilisé pour les variables d'environnement.
 
 
@@ -65,8 +63,9 @@ rm -fr volumes
 
 Pour ajuster l'allocation de ressources pour les conteneurs (par exemple, mémoire, CPU), vous pouvez modifier la valeur des variables d'environnement suivantes dans votre fichier ``.env`` :
 
-- `OPENREFINE_REFXXXX_MEM_LIMIT`: Mémoire allouée au conteneur (par exemple: "512m" pour 512 Mo), valeur par défaut "5g".
-- `OPENREFINE_REFXXXX_CPU_LIMIT`: CPU alloué au conteneur (par exemple: "0.5" pour allouer 50% d'un CPU), valeur par défaut "5".
-- `OPENREFINE_REFXXXX_PORT`: Définit le port à utiliser.
-- `OPENREFINE_REFXXXX_VERSION` : Définit la version de l'image à utiliser. 
+- `OPENREFINE_XXXX_MEM_LIMIT`: Mémoire allouée au conteneur (par exemple: "512m" pour 512 Mo), valeur par défaut "5g".
+- `OPENREFINE_XXXX_CPU_LIMIT`: CPU alloué au conteneur (par exemple: "0.5" pour allouer 50% d'un CPU), valeur par défaut "5".
+- `OPENREFINE_XXXX_PORT`: Définit le port à utiliser.
+- `OPENREFINE_XXXX_VERSION` : Définit la version de l'image à utiliser.
+- `OPENREFINE_XXXX_REFINE_MEMORY` : Définit la valeur mémoire JAVA HEAP à utiliser
 
