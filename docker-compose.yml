@@ -24,7 +24,7 @@ services:
         cpus: ${OPENREFINE_BACON_CPU_LIMIT}
         volumes:
             - ./volumes/refbacon:/mnt/refine
-            - ./refine.ini:/./openrefine/refine.ini
+            #- ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_BACON_PORT}:3333"
         restart: unless-stopped
