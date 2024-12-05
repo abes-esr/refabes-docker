@@ -67,5 +67,5 @@ Pour ajuster l'allocation de ressources pour les conteneurs (par exemple, mémoi
 - `OPENREFINE_XXXX_CPU_LIMIT`: CPU alloué au conteneur (par exemple: "0.5" pour allouer 50% d'un CPU), valeur par défaut "5".
 - `OPENREFINE_XXXX_PORT`: Définit le port à utiliser.
 - `OPENREFINE_XXXX_VERSION` : Définit la version de l'image à utiliser.
-- `OPENREFINE_XXXX_REFINE_MEMORY` : Définit la valeur mémoire JAVA HEAP à utiliser
+- `OPENREFINE_XXXX_REFINE_MEMORY` : Définit la valeur mémoire JAVA HEAP à utiliser.
 
