@@ -27,7 +27,7 @@ services:
             #- ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_BACON_PORT}:3333"
-        command: bash -c "sed -i 's/1400M/${REFINE_MEMORY}/' /openrefine/refine.ini"  
+        command: bash -c "openrefine-${OPENREFINE_BACON_VERSION}/refine -i 0.0.0.0 -d /mnt/refine -m ${REFINE_MEMORY}"  
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
