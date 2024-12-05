@@ -11,6 +11,7 @@ services:
             - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_ALIGNEMENT_PORT}:3333"
+        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_ALIGNEMENT_REFINE_MEMORY}"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -24,10 +25,9 @@ services:
         cpus: ${OPENREFINE_BACON_CPU_LIMIT}
         volumes:
             - ./volumes/refbacon:/mnt/refine
-            #- ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_BACON_PORT}:3333"
-        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${REFINE_MEMORY}"  
+        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_BACON_REFINE_MEMORY}" 
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -41,9 +41,9 @@ services:
         cpus: ${OPENREFINE_HUB_CPU_LIMIT}
         volumes:
             - ./volumes/refhub:/mnt/refine
-            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_HUB_PORT}:3333"
+        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_HUB_REFINE_MEMORY}"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -57,9 +57,9 @@ services:
         cpus: ${OPENREFINE_IDREF_CPU_LIMIT}
         volumes:
             - ./volumes/refidref:/mnt/refine
-            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_IDREF_PORT}:3333"
+        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_IDREF_REFINE_MEMORY}"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -74,9 +74,9 @@ services:
         cpus: ${OPENREFINE_MOVIES_CPU_LIMIT}
         volumes:
             - ./volumes/refmovies:/mnt/refine
-            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_MOVIES_PORT}:3333"
+        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_MOVIES_REFINE_MEMORY}"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -90,9 +90,9 @@ services:
         cpus: ${OPENREFINE_ORCID_CPU_LIMIT}
         volumes:
             - ./volumes/reforcid:/mnt/refine
-            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_ORCID_PORT}:3333"
+        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_ORCID_REFINE_MEMORY}"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -106,9 +106,9 @@ services:
         cpus: ${OPENREFINE_PERIOS_CPU_LIMIT}
         volumes:
             - ./volumes/refine-perios:/mnt/refine
-            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_PERIOS_PORT}:3333"
+        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_PERIOS_REFINE_MEMORY}"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -122,9 +122,9 @@ services:
         cpus: ${OPENREFINE_SUDOC_CPU_LIMIT}
         volumes:
             - ./volumes/refsudoc:/mnt/refine
-            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_SUDOC_PORT}:3333"
+        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_SUDOC_REFINE_MEMORY}"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
@@ -138,9 +138,9 @@ services:
         cpus: ${OPENREFINE_THESES_CPU_LIMIT}
         volumes:
             - ./volumes/reftheses:/mnt/refine
-            - ./refine.ini:/./openrefine/refine.ini
         ports:
             - "${OPENREFINE_THESES_PORT}:3333"
+        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_THESES_REFINE_MEMORY}"
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
