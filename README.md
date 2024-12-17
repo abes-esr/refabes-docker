@@ -32,17 +32,21 @@ cp .env-dist .env
 
 ## Démarrage et arrêt
 
-Pour lancer une instance, il suffit de rentrer la commande suivante :
+Pour lancer une ou des instance(s), il faut modifier la variable COMPOSE_PROFILES présent dans le fichier .env. Les profils sont définis dans le fichier [fichier ``docker-compose.yml``](./docker-compose.yml) :
+```bash
+COMPOSE_PROFILES=watchtower,refmovies
+```
+Puis, il suffit de rentrer la commande suivante :
 
 ```bash
-sudo docker compose --profile refmovies up -d
+sudo docker compose up -d
 ```
 Pour stopper une instance :
 
 ```bash
 cd /opt/pod/refabes-docker/
 
-docker-compose --profile refmovies down
+docker-compose down
 ```
 
 Pour redémarrer une instance :
@@ -53,7 +57,7 @@ docker-compose restart
 Pour supprimer les données :
 
 ```bash
-docker compose --profile refmovies down -v
+docker compose down -v
 
 #Et supprimer les volumes : 
 rm -fr volumes
