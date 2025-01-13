@@ -79,3 +79,6 @@ Pour mettre à jour les containers sur les nouvelles versions d'Openrefine, il f
 ](https://github.com/abes-esr/openrefine)
 
 Une fois la nouvelle release créée, il faut alors modifier la version à utiliser dans le .env.
+
+## Sauvegarde
+Pour sauvegarder les données des différents projets, il faut faire une sauvegarde complète du répertoire "./volumes/refXXXXX".
