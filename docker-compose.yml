@@ -2,8 +2,7 @@ services:
 
     openrefine-alignements:
         #container_name: refine-alignements
-        #container_name: ${OPENREFINE_ALIGNEMENT_CONTAINER_NAME}
-        container_name: ${COMPOSE_PROJECT_NAME}
+        container_name: ${OPENREFINE_ALIGNEMENT_CONTAINER_NAME}
         image: abesesr/openrefine:${OPENREFINE_ALIGNEMENT_VERSION}
         profiles: ["refine-alignements"]
         mem_limit: ${OPENREFINE_ALIGNEMENT_MEM_LIMIT}
