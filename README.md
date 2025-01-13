@@ -73,3 +73,9 @@ Pour ajuster l'allocation de ressources pour les conteneurs (par exemple, mémoi
 - `OPENREFINE_XXXX_VERSION` : Définit la version de l'image à utiliser.
 - `OPENREFINE_XXXX_REFINE_MEMORY` : Définit la valeur mémoire JAVA HEAP à utiliser.
 
+## Mises à jour 
+
+Pour mettre à jour les containers sur les nouvelles versions d'Openrefine, il faut créer une nouvelle release de l'image, à partir de ce dépôt : [Refabes
+](https://github.com/abes-esr/refabes)
+
+Une fois la nouvelle release créée, il faut alors modifier la version à utiliser dans le .env.
