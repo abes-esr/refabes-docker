@@ -75,7 +75,7 @@ Pour ajuster l'allocation de ressources pour les conteneurs (par exemple, mémoi
 
 ## Mises à jour 
 
-Pour mettre à jour les containers sur les nouvelles versions d'Openrefine, il faut créer une nouvelle release de l'image, à partir de ce dépôt : [Refabes
-](https://github.com/abes-esr/refabes)
+Pour mettre à jour les containers sur les nouvelles versions d'Openrefine, il faut créer une nouvelle release de l'image, à partir de ce dépôt : [Openrefine
+](https://github.com/abes-esr/openrefine)
 
 Une fois la nouvelle release créée, il faut alors modifier la version à utiliser dans le .env.
