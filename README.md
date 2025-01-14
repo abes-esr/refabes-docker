@@ -45,7 +45,7 @@ cp .env-dist .env
 
 ## Démarrage et arrêt
 
-Pour lancer l'instance(s), il faut bien penser à modifier la variable OPENREFINE_CONTAINER_NAME présent dans le fichier .env. On retrouve cette valeur à plusieurs endroits dans le [fichier ``docker-compose.yml``](./docker-compose.yml) :
+Pour lancer l'instance, il faut bien penser à modifier la variable OPENREFINE_CONTAINER_NAME présent dans le fichier .env. On retrouve cette valeur à plusieurs endroits dans le [fichier ``docker-compose.yml``](./docker-compose.yml) :
 ```bash
 OPENREFINE_CONTAINER_NAME=refxxxxx
 ```
