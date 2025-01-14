@@ -1,158 +1,26 @@
+
 services:
 
-    openrefine-alignements:
-        #container_name: refine-alignements
-        container_name: ${OPENREFINE_ALIGNEMENT_CONTAINER_NAME}
-        image: abesesr/openrefine:${OPENREFINE_ALIGNEMENT_VERSION}
-        profiles: ["refine-alignements"]
-        mem_limit: ${OPENREFINE_ALIGNEMENT_MEM_LIMIT}
-        cpus: ${OPENREFINE_ALIGNEMENT_CPU_LIMIT}
+    openrefine:
+        container_name: ${OPENREFINE_CONTAINER_NAME}
+        image: abesesr/openrefine:${OPENREFINE_VERSION}
+        mem_limit: ${OPENREFINE_MEM_LIMIT}
+        cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
-            - ./volumes/refine-alignements:/mnt/refine
+            - ./volumes/${OPENREFINE_CONTAINER_NAME}:/mnt/refine
         ports:
-            - "${OPENREFINE_ALIGNEMENT_PORT}:3333"
+            - "${OPENREFINE_PORT}:3333"
         environment:
-          REFINE_MEMORY: ${OPENREFINE_ALIGNEMENT_REFINE_MEMORY}
-        #command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_ALIGNEMENT_REFINE_MEMORY}"
+          REFINE_MEMORY: ${OPENREFINE_REFINE_MEMORY}
         restart: unless-stopped
         labels:
             # pour que les mises à jour de cette image soient auto-déployées par watchtower
-            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            - "com.centurylinklabs.watchtower.scope=${OPENREFINE_CONTAINER_NAME}-watchtower-scope"
 
-    openrefine-bacon:
-        container_name: refbacon
-        image: abesesr/openrefine:${OPENREFINE_BACON_VERSION}
-        profiles: ["refbacon"]
-        mem_limit: ${OPENREFINE_BACON_MEM_LIMIT}
-        cpus: ${OPENREFINE_BACON_CPU_LIMIT}
-        volumes:
-            - ./volumes/refbacon:/mnt/refine
-        ports:
-            - "${OPENREFINE_BACON_PORT}:3333"
-        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_BACON_REFINE_MEMORY}" 
-        restart: unless-stopped
-        labels:
-            # pour que les mises à jour de cette image soient auto-déployées par watchtower
-            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
-
-    openrefine-hub:
-        container_name: refhub
-        image: abesesr/openrefine:${OPENREFINE_HUB_VERSION}
-        profiles: ["refhub"]
-        mem_limit: ${OPENREFINE_HUB_MEM_LIMIT}
-        cpus: ${OPENREFINE_HUB_CPU_LIMIT}
-        volumes:
-            - ./volumes/refhub:/mnt/refine
-        ports:
-            - "${OPENREFINE_HUB_PORT}:3333"
-        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_HUB_REFINE_MEMORY}"
-        restart: unless-stopped
-        labels:
-            # pour que les mises à jour de cette image soient auto-déployées par watchtower
-            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
-      
-    openrefine-idref:
-        container_name: refidref
-        image: abesesr/openrefine:${OPENREFINE_IDREF_VERSION}
-        profiles: ["refidref"]
-        mem_limit: ${OPENREFINE_IDREF_MEM_LIMIT}
-        cpus: ${OPENREFINE_IDREF_CPU_LIMIT}
-        volumes:
-            - ./volumes/refidref:/mnt/refine
-        ports:
-            - "${OPENREFINE_IDREF_PORT}:3333"
-        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_IDREF_REFINE_MEMORY}"
-        restart: unless-stopped
-        labels:
-            # pour que les mises à jour de cette image soient auto-déployées par watchtower
-            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
-
-      
-    openrefine-movies:
-        container_name: refmovies
-        image: abesesr/openrefine:${OPENREFINE_MOVIES_VERSION}
-        profiles: ["refmovies"]
-        mem_limit: ${OPENREFINE_MOVIES_MEM_LIMIT}
-        cpus: ${OPENREFINE_MOVIES_CPU_LIMIT}
-        volumes:
-            - ./volumes/refmovies:/mnt/refine
-        ports:
-            - "${OPENREFINE_MOVIES_PORT}:3333"
-        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_MOVIES_REFINE_MEMORY}"
-        restart: unless-stopped
-        labels:
-            # pour que les mises à jour de cette image soient auto-déployées par watchtower
-            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
-      
-    openrefine-reforcid:
-        container_name: reforcid
-        image: abesesr/openrefine:${OPENREFINE_ORCID_VERSION}
-        profiles: ["reforcid"]
-        mem_limit: ${OPENREFINE_ORCID_MEM_LIMIT}
-        cpus: ${OPENREFINE_ORCID_CPU_LIMIT}
-        volumes:
-            - ./volumes/reforcid:/mnt/refine
-        ports:
-            - "${OPENREFINE_ORCID_PORT}:3333"
-        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_ORCID_REFINE_MEMORY}"
-        restart: unless-stopped
-        labels:
-            # pour que les mises à jour de cette image soient auto-déployées par watchtower
-            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
-      
-    openrefine-refperios:
-        container_name: refperios
-        image: abesesr/openrefine:${OPENREFINE_PERIOS_VERSION}
-        profiles: ["refine-perios"]
-        mem_limit: ${OPENREFINE_PERIOS_MEM_LIMIT}
-        cpus: ${OPENREFINE_PERIOS_CPU_LIMIT}
-        volumes:
-            - ./volumes/refine-perios:/mnt/refine
-        ports:
-            - "${OPENREFINE_PERIOS_PORT}:3333"
-        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_PERIOS_REFINE_MEMORY}"
-        restart: unless-stopped
-        labels:
-            # pour que les mises à jour de cette image soient auto-déployées par watchtower
-            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
-      
-    openrefine-sudoc:
-        container_name: refsudoc
-        image: abesesr/openrefine:${OPENREFINE_SUDOC_VERSION}
-        profiles: ["refsudoc"]
-        mem_limit: ${OPENREFINE_SUDOC_MEM_LIMIT}
-        cpus: ${OPENREFINE_SUDOC_CPU_LIMIT}
-        volumes:
-            - ./volumes/refsudoc:/mnt/refine
-        ports:
-            - "${OPENREFINE_SUDOC_PORT}:3333"
-        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_SUDOC_REFINE_MEMORY}"
-        restart: unless-stopped
-        labels:
-            # pour que les mises à jour de cette image soient auto-déployées par watchtower
-            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
-      
-    openrefine-theses:
-        container_name: reftheses
-        image: abesesr/openrefine:${OPENREFINE_THESES_VERSION}
-        profiles: ["reftheses"]
-        mem_limit: ${OPENREFINE_THESES_MEM_LIMIT}
-        cpus: ${OPENREFINE_THESES_CPU_LIMIT}
-        volumes:
-            - ./volumes/reftheses:/mnt/refine
-        ports:
-            - "${OPENREFINE_THESES_PORT}:3333"
-        command: bash -c "openrefine/refine -i 0.0.0.0 -d /mnt/refine -m ${OPENREFINE_THESES_REFINE_MEMORY}"
-        restart: unless-stopped
-        labels:
-            # pour que les mises à jour de cette image soient auto-déployées par watchtower
-            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
-      
 
     openrefine-watchtower:
         image: containrrr/watchtower:1.4.0
-        container_name: openrefine-watchtower
-        profiles: ["watchtower"]
+        container_name: ${OPENREFINE_CONTAINER_NAME}-watchtower
         restart: unless-stopped
         networks:
          - default
@@ -169,4 +37,4 @@ services:
             - WATCHTOWER_RUN_ONCE=${OPENREFINE_WATCHTOWER_RUN_ONCE}
             - WATCHTOWER_SCOPE=openrefine-watchtower-scope
         labels:
-            - "com.centurylinklabs.watchtower.scope=openrefine-watchtower-scope"
+            - "com.centurylinklabs.watchtower.scope=${OPENREFINE_CONTAINER_NAME}-watchtower-scope"
