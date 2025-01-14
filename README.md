@@ -13,6 +13,19 @@ Disposer de :
 Ce projet se compose de deux fichiers, le premier "docker-compose.yml" regroupe les paramètres, répertoires et profils des instances Openrefine.
 Le dernier fichier ".env-dist" est un template pour la création du fichier .env qui sera utilisé pour les variables d'environnement.
 
+## Liste des Openrefine présent à l'ABES :
+
+|  Nom | Port |
+|-------------------:|-------|
+| refalignements | 13334 |
+| refbacon | 13336 |
+| refhub   | 13337 |
+| refidref | 13338 |
+| refmovies | 13341 |
+| reforcid | 13340 |
+| refperio | 13333 |
+| refsudoc | 13339 |
+| reftheses | 13342 |
 
 ## Installation 
 
@@ -20,21 +33,21 @@ Déployer la configuration docker dans un répertoire :
 ```bash
 # adaptez /opt/pod/ avec l'emplacement où vous souhaitez déployer l'application
 cd /opt/pod/
-git clone https://github.com/abes-esr/refabes-docker.git
+git clone https://github.com/abes-esr/refabes-docker.git refxxxxxx
 ```
 
 Configurer l'application depuis l'exemple du [fichier ``.env-dist``](./.env-dist) (ce fichier contient la liste des variables) :
 ```bash
-cd /opt/pod/refabes-docker/
+cd /opt/pod/refXXXXXXX/
 cp .env-dist .env
 # personnaliser alors le contenu du .env
 ```
 
 ## Démarrage et arrêt
 
-Pour lancer une ou des instance(s), il faut modifier la variable COMPOSE_PROFILES présent dans le fichier .env. Les profils sont définis dans le fichier [fichier ``docker-compose.yml``](./docker-compose.yml) :
+Pour lancer l'instance(s), il faut bien penser à modifier la variable OPENREFINE_CONTAINER_NAME présent dans le fichier .env. On retrouve cette valeur à plusieurs endroits dans le [fichier ``docker-compose.yml``](./docker-compose.yml) :
 ```bash
-COMPOSE_PROFILES=watchtower,refmovies
+OPENREFINE_CONTAINER_NAME=refxxxxx
 ```
 Puis, il suffit de rentrer la commande suivante :
 
@@ -44,7 +57,7 @@ sudo docker compose up -d
 Pour stopper une instance :
 
 ```bash
-cd /opt/pod/refabes-docker/
+cd /opt/pod/refXXXXXXX/
 
 docker-compose down
 ```
@@ -67,11 +80,11 @@ rm -fr volumes
 
 Pour ajuster l'allocation de ressources pour les conteneurs (par exemple, mémoire, CPU), vous pouvez modifier la valeur des variables d'environnement suivantes dans votre fichier ``.env`` :
 
-- `OPENREFINE_XXXX_MEM_LIMIT`: Mémoire allouée au conteneur (par exemple: "512m" pour 512 Mo), valeur par défaut "5g".
-- `OPENREFINE_XXXX_CPU_LIMIT`: CPU alloué au conteneur (par exemple: "0.5" pour allouer 50% d'un CPU), valeur par défaut "5".
-- `OPENREFINE_XXXX_PORT`: Définit le port à utiliser.
-- `OPENREFINE_XXXX_VERSION` : Définit la version de l'image à utiliser.
-- `OPENREFINE_XXXX_REFINE_MEMORY` : Définit la valeur mémoire JAVA HEAP à utiliser.
+- `OPENREFINE_MEM_LIMIT`: Mémoire allouée au conteneur (par exemple: "512m" pour 512 Mo), valeur par défaut "5g".
+- `OPENREFINE_CPU_LIMIT`: CPU alloué au conteneur (par exemple: "0.5" pour allouer 50% d'un CPU), valeur par défaut "5".
+- `OPENREFINE_PORT`: Définit le port à utiliser.
+- `OPENREFINE_VERSION` : Définit la version de l'image à utiliser.
+- `OPENREFINE_REFINE_MEMORY` : Définit la valeur mémoire JAVA HEAP à utiliser.
 
 ## Mises à jour 
 
