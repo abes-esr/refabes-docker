@@ -78,7 +78,12 @@ Pour ajuster l'allocation de ressources pour les conteneurs (par exemple, mémoi
 Pour mettre à jour les containers sur les nouvelles versions d'Openrefine, il faut créer une nouvelle release de l'image, à partir de ce dépôt : [Openrefine
 ](https://github.com/abes-esr/openrefine)
 
+
 Une fois la nouvelle release créée, il faut alors modifier la version à utiliser dans le .env.
 
 ## Sauvegarde
 Pour sauvegarder les données des différents projets, il faut faire une sauvegarde complète du répertoire "./volumes/refXXXXX".
+
+## Restauration
+
+Pour restaurer un projet, il faut récupérer le backup de celui-ci, vérifier qu'il soit bien au format XXXXXX.project et le copier dans le répertoire /volumes/refXXXXX correspondant. Openrefine pourra alors le détecter et l'afficher sur la page d'accueil.
