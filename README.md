@@ -15,17 +15,17 @@ Le dernier fichier ".env-dist" est un template pour la création du fichier .env
 
 ## Liste des Openrefine présent à l'ABES :
 
-|  Nom | Port |
-|-------------------:|-------|
-| refalignements | 13334 |
-| refbacon | 13336 |
-| refhub   | 13337 |
-| refidref | 13338 |
-| refmovies | 13341 |
-| reforcid | 13340 |
-| refperio | 13333 |
-| refsudoc | 13339 |
-| reftheses | 13342 |
+|  Nom |
+|-------------------:|
+| refalignements | 
+| refbacon | 
+| refhub   | 
+| refidref | 
+| refmovies |
+| reforcid | 
+| refperio | 
+| refsudoc | 
+| reftheses | 
 
 ## Installation 
 
