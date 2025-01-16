@@ -33,12 +33,12 @@ Déployer la configuration docker dans un répertoire :
 ```bash
 # adaptez /opt/pod/ avec l'emplacement où vous souhaitez déployer l'application
 cd /opt/pod/
-git clone https://github.com/abes-esr/refabes-docker.git refxxxxxx
+git clone https://github.com/abes-esr/refabes-docker.git refxxxxxx-docker
 ```
 
 Configurer l'application depuis l'exemple du [fichier ``.env-dist``](./.env-dist) (ce fichier contient la liste des variables) :
 ```bash
-cd /opt/pod/refXXXXXXX/
+cd /opt/pod/refXXXXXXX-docker/
 cp .env-dist .env
 # personnaliser alors le contenu du .env
 ```
@@ -47,7 +47,7 @@ cp .env-dist .env
 
 Pour lancer l'instance, il faut bien penser à modifier la variable OPENREFINE_CONTAINER_NAME présent dans le fichier .env. On retrouve cette valeur à plusieurs endroits dans le [fichier ``docker-compose.yml``](./docker-compose.yml) :
 ```bash
-OPENREFINE_CONTAINER_NAME=refxxxxx
+OPENREFINE_CONTAINER_NAME=refxxxxx-docker
 ```
 Puis, il suffit de rentrer la commande suivante :
 
@@ -57,7 +57,7 @@ sudo docker compose up -d
 Pour stopper une instance :
 
 ```bash
-cd /opt/pod/refXXXXXXX/
+cd /opt/pod/refXXXXXXX-docker/
 
 docker-compose down
 ```
@@ -95,8 +95,8 @@ Pour mettre à jour les containers sur les nouvelles versions d'Openrefine, il f
 Une fois la nouvelle release créée, il faut alors modifier la version à utiliser dans le .env.
 
 ## Sauvegarde
-Pour sauvegarder les données des différents projets, il faut faire une sauvegarde complète du répertoire "./volumes/refXXXXX".
+Pour sauvegarder les données des différents projets, il faut faire une sauvegarde complète du répertoire "./volumes/refXXXXX-docker".
 
 ## Restauration
 
-Pour restaurer un projet, il faut récupérer le backup de celui-ci, vérifier qu'il soit bien au format XXXXXX.project et le copier dans le répertoire /volumes/refXXXXX correspondant. Openrefine pourra alors le détecter et l'afficher sur la page d'accueil.
+Pour restaurer un projet, il faut récupérer le backup de celui-ci, vérifier qu'il soit bien au format XXXXXX.project et le copier dans le répertoire /volumes/refXXXXX-docker correspondant. Openrefine pourra alors le détecter et l'afficher sur la page d'accueil.
