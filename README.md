@@ -23,7 +23,7 @@ Le dernier fichier ".env-dist" est un template pour la création du fichier .env
 | refidref | 
 | refmovies |
 | reforcid | 
-| refperio | 
+| refperios | 
 | refsudoc | 
 | reftheses | 
 
