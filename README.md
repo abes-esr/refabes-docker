@@ -112,4 +112,4 @@ Enfin, placer la sauvegarde du .env dans ce répertoire et lancer le docker-comp
 
 ## Restauration d'un projet
 
-Pour restaurer un projet, il faut récupérer le backup de celui-ci, vérifier qu'il soit bien au format XXXXXX.project et le copier dans le répertoire /volumes/refabes de l'instance que l'on souhaite restaurer. Openrefine pourra alors le détecter et l'afficher sur la page "Ouvrir un projet". 
+Pour restaurer un projet, il faut récupérer le backup de celui-ci, vérifier qu'il soit bien au format XXXXXX.project et le copier dans le répertoire /volumes/refabes de l'instance que l'on souhaite restaurer. Openrefine pourra alors le détecter et l'afficher sur la page "Open project". 
