@@ -7,34 +7,9 @@ services:
         mem_limit: ${OPENREFINE_MEM_LIMIT}
         cpus: ${OPENREFINE_CPU_LIMIT}
         volumes:
-            - ./volumes/${OPENREFINE_CONTAINER_NAME}:/mnt/refine
+            - ./volumes/refabes:/mnt/refine
         ports:
             - "${OPENREFINE_PORT}:3333"
         environment:
-          REFINE_MEMORY: ${OPENREFINE_REFINE_MEMORY}
+          REFINE_MEMORY: ${OPENREFINE_MEM_LIMIT}
         restart: unless-stopped
-        labels:
-            # pour que les mises à jour de cette image soient auto-déployées par watchtower
-            - "com.centurylinklabs.watchtower.scope=${OPENREFINE_CONTAINER_NAME}-watchtower-scope"
-
-
-    openrefine-watchtower:
-        image: containrrr/watchtower:1.4.0
-        container_name: ${OPENREFINE_CONTAINER_NAME}-watchtower
-        restart: unless-stopped
-        networks:
-         - default
-        mem_limit: ${OPENREFINE_WATCHTOWER_MEM_LIMIT}
-        cpus: ${OPENREFINE_WATCHTOWER_CPU_LIMIT}
-        volumes:
-         - /var/run/docker.sock:/var/run/docker.sock
-        environment:
-            - WATCHTOWER_CLEANUP=true
-            - WATCHTOWER_POLL_INTERVAL=60
-            - WATCHTOWER_DEBUG=false
-            - WATCHTOWER_NO_STARTUP_MESSAGE=true
-            - WATCHTOWER_WARN_ON_HEAD_FAILURE=never
-            - WATCHTOWER_RUN_ONCE=${OPENREFINE_WATCHTOWER_RUN_ONCE}
-            - WATCHTOWER_SCOPE=openrefine-watchtower-scope
-        labels:
-            - "com.centurylinklabs.watchtower.scope=${OPENREFINE_CONTAINER_NAME}-watchtower-scope"
