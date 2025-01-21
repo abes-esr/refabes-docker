@@ -83,7 +83,7 @@ rm -fr volumes
 
 Pour ajuster l'allocation de ressources pour les conteneurs (par exemple, mémoire, CPU), vous pouvez modifier la valeur des variables d'environnement suivantes dans votre fichier ``.env`` :
 
-- `OPENREFINE_MEM_LIMIT`: Mémoire allouée au conteneur et définit égalament la valeur mémoire JAVA HEAP à utiliser. (par exemple: "512m" pour 512 Mo).
+- `OPENREFINE_MEM_LIMIT`: Mémoire allouée au conteneur et définit égalament la valeur mémoire JAVA HEAP à utiliser. (par exemple: "512m" pour 512 MB).
 - `OPENREFINE_CPU_LIMIT`: CPU alloué au conteneur (par exemple: "0.5" pour allouer 50% d'un CPU), valeur par défaut "5".
 - `OPENREFINE_PORT`: Définit le port à utiliser.
 - `OPENREFINE_VERSION` : Définit la version de l'image à utiliser.
