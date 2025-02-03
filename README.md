@@ -112,4 +112,9 @@ Enfin, placer la sauvegarde du .env dans ce répertoire et lancer le docker-comp
 
 ## Restauration d'un projet
 
-Pour restaurer un projet, il faut récupérer le backup de celui-ci, vérifier qu'il soit bien au format XXXXXX.project et le copier dans le répertoire /volumes/refabes de l'instance que l'on souhaite restaurer. Openrefine pourra alors le détecter et l'afficher sur la page "Open project" une fois le container démarré ou redémarré si celui-ci était en cours d'utilisation.
+Pour restaurer un projet, il faut récupérer le backup de celui-ci qui est présent sur le serveur sauvegarde, vérifier qu'il soit bien au format XXXXXX.project et le copier à l'aide d'un rsync dans le répertoire /volumes/refabes de l'instance que l'on souhaite restaurer : 
+```bash
+# On fait un exclude de potentiels projets corrompus des fichiers workspaces, car ils seront mis à jour avec l'ouverture des projets et du répertoire dbextensions qui est déjà présent sur le container.
+rsync -av --exclude={'*.project.corrupted','dbextension','workspace.json','workspace.old.json'} /root/backup_pool/diplotaxisX-XXXX/daily.X/racine/opt/pod/refXXXXXXXX-docker/volumes/refabes/ root@diplotaxisX-XXXX.v104.abes.fr:/opt/pod/refXXXXXXXXXx/volumes/refabes/
+```
+Openrefine pourra alors le détecter et l'afficher sur la page "Open project" une fois le container démarré (ou redémarré si celui-ci était en cours d'utilisation).
