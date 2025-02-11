@@ -2,14 +2,14 @@
 services:
 
     openrefine:
-        container_name: ${OPENREFINE_CONTAINER_NAME}
+        container_name: ${REFABES_NAME}
         image: abesesr/openrefine:${OPENREFINE_VERSION}
-        mem_limit: ${OPENREFINE_MEM_LIMIT}
-        cpus: ${OPENREFINE_CPU_LIMIT}
+        mem_limit: ${REFABES_MEM_LIMIT}
+        cpus: ${REFABES_CPU_LIMIT}
         volumes:
             - ./volumes/refabes:/mnt/refine
         ports:
-            - "${OPENREFINE_PORT}:3333"
+            - "${REFABES_PORT}:3333"
         environment:
-          REFINE_MEMORY: ${OPENREFINE_MEM_LIMIT}
+          REFINE_MEMORY: ${REFABES_MEM_LIMIT}
         restart: unless-stopped
