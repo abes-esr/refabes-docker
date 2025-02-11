@@ -15,17 +15,17 @@ Le dernier fichier ".env-dist" est un template pour la création du fichier .env
 
 ## Liste des Openrefine présent à l'ABES :
 
-|  Nom | Port réservé | RAM en MB ( à titre indicatif car peut varier) | URL dev | URL test | URL prod | Machine hôte (-dev/-test/-prod) |
+|  Nom | Port réservé | RAM en M et non en GB ( à titre indicatif car peut varier)  | URL dev | URL test | URL prod | Machine hôte (-dev/-test/-prod) |
 |------|-------:|-------|-------|-------|-------|-------|
-| refalignements | 13334 | 4600MB | [https://refalignements-dev.abes.fr/](https://refalignements-dev.abes.fr/) | [https://refalignements-test.abes.fr/](https://refalignements-test.abes.fr/) | [https://refalignements.abes.fr/](https://refalignements.abes.fr/) |  diplotaxis6 |
-| refbacon | 13336 | 4600MB | [https://refbacon-dev.abes.fr/](https://refbacon-dev.abes.fr/) | [https://refbacon-test.abes.fr/](https://refbacon-test.abes.fr/) | [https://refbacon.abes.fr/](https://refbacon.abes.fr/) | diplotaxis5 |
-| refhub   | 13337 | 4600MB | [https://refhub-dev.abes.fr/](https://refhub-dev.abes.fr/) | [https://refhub-test.abes.fr/](https://refhub-test.abes.fr/) | [https://refhub.abes.fr/](https://refhub.abes.fr/) | diplotaxis5 |
-| refidref | 13338 | 4600MB | [https://refidref-dev.abes.fr/](https://refidref-dev.abes.fr/) | [https://refidref-test.abes.fr/](https://refidref-test.abes.fr/) | [https://refidref.abes.fr/](https://refidref.abes.fr/) | diplotaxis4 |
-| refmovies | 13341 | 4600MB | [https://refmovies-dev.abes.fr/](https://refmovies-dev.abes.fr/) | [https://refmovies-test.abes.fr/](https://refmovies-test.abes.fr/) | [https://refmovies.abes.fr/](https://refmovies.abes.fr/) | diplotaxis4 |
-| reforcid | 13340 | 4600MB | [https://reforcid-dev.abes.fr/](https://reforcid-dev.abes.fr/) | [https://reforcid-test.abes.fr/](https://reforcid-test.abes.fr/) | [https://reforcid.abes.fr/](https://reforcid.abes.fr/) | diplotaxis6 |
-| refperios | 13333 | 4600MB | [https://refperios-dev.abes.fr/](https://refperios-dev.abes.fr/) | [https://refperios-test.abes.fr/](https://refperios-test.abes.fr/) | [https://refperios.abes.fr/](https://refperios.abes.fr/) | diplotaxis3 |
-| refsudoc | 13339 | 4600MB | [https://refsudoc-dev.abes.fr/](https://refsudoc-dev.abes.fr/) | [https://refsudoc-test.abes.fr/](https://refsudoc-test.abes.fr/) | [https://refsudoc.abes.fr/](https://refsudoc.abes.fr/) | diplotaxis3 |
-| reftheses | 13342 | 4600MB | [https://reftheses-dev.abes.fr/](https://reftheses-dev.abes.fr/) | [https://reftheses-test.abes.fr/](https://reftheses-test.abes.fr/) | [https://reftheses.abes.fr/](https://reftheses.abes.fr/) | diplotaxis2 |
+| refalignements | 13334 | 4600M | [https://refalignements-dev.abes.fr/](https://refalignements-dev.abes.fr/) | [https://refalignements-test.abes.fr/](https://refalignements-test.abes.fr/) | [https://refalignements.abes.fr/](https://refalignements.abes.fr/) |  diplotaxis6 |
+| refbacon | 13336 | 4600M | [https://refbacon-dev.abes.fr/](https://refbacon-dev.abes.fr/) | [https://refbacon-test.abes.fr/](https://refbacon-test.abes.fr/) | [https://refbacon.abes.fr/](https://refbacon.abes.fr/) | diplotaxis5 |
+| refhub   | 13337 | 4600M | [https://refhub-dev.abes.fr/](https://refhub-dev.abes.fr/) | [https://refhub-test.abes.fr/](https://refhub-test.abes.fr/) | [https://refhub.abes.fr/](https://refhub.abes.fr/) | diplotaxis5 |
+| refidref | 13338 | 4600M | [https://refidref-dev.abes.fr/](https://refidref-dev.abes.fr/) | [https://refidref-test.abes.fr/](https://refidref-test.abes.fr/) | [https://refidref.abes.fr/](https://refidref.abes.fr/) | diplotaxis4 |
+| refmovies | 13341 | 4600M | [https://refmovies-dev.abes.fr/](https://refmovies-dev.abes.fr/) | [https://refmovies-test.abes.fr/](https://refmovies-test.abes.fr/) | [https://refmovies.abes.fr/](https://refmovies.abes.fr/) | diplotaxis4 |
+| reforcid | 13340 | 4600M | [https://reforcid-dev.abes.fr/](https://reforcid-dev.abes.fr/) | [https://reforcid-test.abes.fr/](https://reforcid-test.abes.fr/) | [https://reforcid.abes.fr/](https://reforcid.abes.fr/) | diplotaxis6 |
+| refperios | 13333 | 4600M | [https://refperios-dev.abes.fr/](https://refperios-dev.abes.fr/) | [https://refperios-test.abes.fr/](https://refperios-test.abes.fr/) | [https://refperios.abes.fr/](https://refperios.abes.fr/) | diplotaxis3 |
+| refsudoc | 13339 | 4600M | [https://refsudoc-dev.abes.fr/](https://refsudoc-dev.abes.fr/) | [https://refsudoc-test.abes.fr/](https://refsudoc-test.abes.fr/) | [https://refsudoc.abes.fr/](https://refsudoc.abes.fr/) | diplotaxis3 |
+| reftheses | 13342 | 4600M | [https://reftheses-dev.abes.fr/](https://reftheses-dev.abes.fr/) | [https://reftheses-test.abes.fr/](https://reftheses-test.abes.fr/) | [https://reftheses.abes.fr/](https://reftheses.abes.fr/) | diplotaxis2 |
 
 
 
