@@ -50,7 +50,7 @@ cp .env-dist .env
 
 Pour lancer l'instance, il faut bien penser à modifier la variable OPENREFINE_CONTAINER_NAME présent dans le fichier .env. On retrouve cette valeur à plusieurs endroits dans le [fichier ``docker-compose.yml``](./docker-compose.yml) :
 ```bash
-OPENREFINE_CONTAINER_NAME=refxxxxx-docker
+REFABES_NAME=refxxxxx-docker
 ```
 Puis, il suffit de rentrer la commande suivante :
 
@@ -83,9 +83,9 @@ rm -fr volumes
 
 Pour ajuster l'allocation de ressources pour les conteneurs (par exemple, mémoire, CPU), vous pouvez modifier la valeur des variables d'environnement suivantes dans votre fichier ``.env`` :
 
-- `OPENREFINE_MEM_LIMIT`: Mémoire allouée au conteneur et définit égalament la valeur mémoire JAVA HEAP à utiliser. (par exemple: "512m" pour 512 MB).
-- `OPENREFINE_CPU_LIMIT`: CPU alloué au conteneur (par exemple: "0.5" pour allouer 50% d'un CPU), valeur par défaut "5".
-- `OPENREFINE_PORT`: Définit le port à utiliser.
+- `REFABES_MEM_LIMIT`: Mémoire allouée au conteneur et définit égalament la valeur mémoire JAVA HEAP à utiliser. (par exemple: "512m" pour 512 MB).
+- `REFABES_CPU_LIMIT`: CPU alloué au conteneur (par exemple: "0.5" pour allouer 50% d'un CPU), valeur par défaut "5".
+- `REFABES_PORT`: Définit le port à utiliser.
 - `OPENREFINE_VERSION` : Définit la version de l'image à utiliser.
 
 ## Mises à jour 
@@ -115,6 +115,8 @@ Enfin, placer la sauvegarde du .env dans ce répertoire et lancer le docker-comp
 Pour restaurer un projet, il faut récupérer le backup de celui-ci qui est présent sur le serveur sauvegarde, vérifier qu'il soit bien au format XXXXXX.project et le copier à l'aide d'un rsync dans le répertoire /volumes/refabes de l'instance que l'on souhaite restaurer : 
 ```bash
 # On fait un exclude de potentiels projets corrompus des fichiers workspaces, car ils seront mis à jour avec l'ouverture des projets et du répertoire dbextensions qui est déjà présent sur le container.
-rsync -av --exclude={'*.project.corrupted','dbextension','workspace.json','workspace.old.json'} /root/backup_pool/diplotaxisX-XXXX/daily.X/racine/opt/pod/refXXXXXXXX-docker/volumes/refabes/ root@diplotaxisX-XXXX.v104.abes.fr:/opt/pod/refXXXXXXXXXx/volumes/refabes/
+rsync -av --exclude={'*.project.corrupted','dbextension','workspace.json','workspace.old.json'} \
+/root/backup_pool/diplotaxisX-XXXX/daily.X/racine/opt/pod/refXXXXX-docker/volumes/refabes/ \
+root@diplotaxisX-XXXX.v104.abes.fr:/opt/pod/refXXXXXX-docker/volumes/refabes/
 ```
 Openrefine pourra alors le détecter et l'afficher sur la page "Open project" une fois le container démarré (ou redémarré si celui-ci était en cours d'utilisation).
