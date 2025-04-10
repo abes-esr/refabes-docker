@@ -18,6 +18,7 @@ Le dernier fichier ".env-dist" est un template pour la création du fichier .env
 |  Nom | Port réservé | RAM en M et non en GB ( à titre indicatif car peut varier)  | URL test | URL prod | Machine hôte (-test/-prod) |
 |------|-------:|-------|-------|-------|-------|
 | refalignements | 13334 | 4600M | [https://refalignements-test.abes.fr/](https://refalignements-test.abes.fr/) | [https://refalignements.abes.fr/](https://refalignements.abes.fr/) |  diplotaxis6 |
+| refadele | 13343 | 4600M | [https://refadele-test.abes.fr/](https://refadele-test.abes.fr/) | [https://refadele.abes.fr/](https://refadele.abes.fr/) |  diplotaxis6 |
 | refbacon | 13336 | 4600M | [https://refbacon-test.abes.fr/](https://refbacon-test.abes.fr/) | [https://refbacon.abes.fr/](https://refbacon.abes.fr/) | diplotaxis5 |
 | refhub   | 13337 | 4600M | [https://refhub-test.abes.fr/](https://refhub-test.abes.fr/) | [https://refhub.abes.fr/](https://refhub.abes.fr/) | diplotaxis5 |
 | refidref | 13338 | 4600M | [https://refidref-test.abes.fr/](https://refidref-test.abes.fr/) | [https://refidref.abes.fr/](https://refidref.abes.fr/) | diplotaxis4 |
@@ -62,12 +63,12 @@ Pour stopper une instance :
 ```bash
 cd /opt/pod/refXXXXXXX-docker/
 
-docker-compose down
+docker compose down
 ```
 
 Pour redémarrer une instance :
 ```bash
-docker-compose restart
+docker compose restart
 ```
 
 Pour supprimer les données :
