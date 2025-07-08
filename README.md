@@ -1,19 +1,10 @@
 # refabes-docker
 
+``refabes-docker`` est un dépôt qui a pour vocation structurer les configurations et les déploiement des différentes instances Openrefine de l'Abes (usage interne).
 
-## Introduction
-refabes-docker est un projet qui a pour vocation de regrouper les différentes instances Openrefine.
+## Openrefine de l'Abes
 
-## Prérequis
-
-Disposer de :
-- ``docker-compose``
-- ``.env-dist``
-
-Ce projet se compose de deux fichiers, le premier "docker-compose.yml" regroupe les paramètres, répertoires et profils des instances Openrefine.
-Le dernier fichier ".env-dist" est un template pour la création du fichier .env qui sera utilisé pour les variables d'environnement.
-
-## Liste des Openrefine présent à l'ABES :
+Ci-dessous l'ensemble des instances utilisées en interne par l'Abes.
 
 |  Nom | Port réservé | RAM en M et non en GB ( à titre indicatif car peut varier)  | URL test | URL prod | Machine hôte (-test/-prod) |
 |------|-------:|-------|-------|-------|-------|
@@ -28,56 +19,63 @@ Le dernier fichier ".env-dist" est un template pour la création du fichier .env
 | refsudoc | 13339 | 4600M | [https://refsudoc-test.abes.fr/](https://refsudoc-test.abes.fr/) | [https://refsudoc.abes.fr/](https://refsudoc.abes.fr/) | diplotaxis3 |
 | reftheses | 13342 | 4600M | [https://reftheses-test.abes.fr/](https://reftheses-test.abes.fr/) | [https://reftheses.abes.fr/](https://reftheses.abes.fr/) | diplotaxis2 |
 
+## Architecture du dépôt
 
+Ce dépôt se compose de deux fichiers, le premier ``docker-compose.yml`` regroupe les paramètres, répertoires et profils des instances Openrefine.
+Le dernier fichier ``.env-dist`` est un template pour la création du fichier ``.env`` qui est utilisé pour le paramétrage des instances (via des variables d'environnements).
 
+## Prérequis
+
+Le serveur doit disposer de :
+- Docker
+- Docker compose
 
 ## Installation 
 
-Déployer la configuration docker dans un répertoire :
+Déployer la configuration docker dans un répertoire dédiée que l'on nomme "refxxxxx-docker" (pensez à remplacer "xxxxx" par un nom court spécifique à votre instance) :
 ```bash
 # adaptez /opt/pod/ avec l'emplacement où vous souhaitez déployer l'application
 cd /opt/pod/
-git clone https://github.com/abes-esr/refabes-docker.git refxxxxxx-docker
+git clone https://github.com/abes-esr/refabes-docker.git refxxxxx-docker
 ```
 
 Configurer l'application depuis l'exemple du [fichier ``.env-dist``](./.env-dist) (ce fichier contient la liste des variables) :
 ```bash
-cd /opt/pod/refXXXXXXX-docker/
+cd /opt/pod/refxxxxx-docker/
 cp .env-dist .env
 # personnaliser alors le contenu du .env
+```
+Note importante : un paramètre important du ``.env`` qu'il est nécessaire de modifier concerne la variable ``REFABES_NAME``. C'est le petit nom de l'instance qui par défaut est réglé sur "refxxxxx". La nomenclature choisie est de remplacer "xxxxx" par un nom court spécifique à votre instance en lettre minuscules. Voici un exemple : 
+```bash
+REFABES_NAME=reforcid
 ```
 
 ## Démarrage et arrêt
 
-Pour lancer l'instance, il faut bien penser à modifier la variable OPENREFINE_CONTAINER_NAME présent dans le fichier .env. On retrouve cette valeur à plusieurs endroits dans le [fichier ``docker-compose.yml``](./docker-compose.yml) :
+Pour lancer l'instance, il suffit de rentrer la commande suivante :
 ```bash
-REFABES_NAME=refxxxxx-docker
-```
-Puis, il suffit de rentrer la commande suivante :
-
-```bash
+cd /opt/pod/refxxxxx-docker/
 sudo docker compose up -d
 ```
+
 Pour stopper une instance :
-
 ```bash
-cd /opt/pod/refXXXXXXX-docker/
-
-docker compose down
+cd /opt/pod/refxxxxx-docker/
+sudo docker compose down
 ```
 
 Pour redémarrer une instance :
 ```bash
-docker compose restart
+cd /opt/pod/refxxxxx-docker/
+sudo docker compose restart
 ```
 
 Pour supprimer les données :
-
 ```bash
-docker compose down -v
-
-#Et supprimer les volumes : 
-rm -fr volumes
+cd /opt/pod/refxxxxx-docker/
+sudo docker compose down -v
+# et supprimer le répertoire déportant les données des volumes : 
+rm -fr cd /opt/pod/refxxxxx-docker/volumes/
 ```
 
 ## Allocation de ressources pour les conteneurs
@@ -95,21 +93,21 @@ Pour mettre à jour les containers sur les nouvelles versions d'Openrefine, il f
 ](https://github.com/abes-esr/openrefine)
 
 
-Une fois la nouvelle release créée, il faut alors modifier la version à utiliser dans le .env.
+Une fois la nouvelle release créée, il faut alors modifier la version à utiliser dans le ``.env``.
 
 ## Sauvegarde
-Pour sauvegarder les données des différents projets, il faut faire une sauvegarde complète du répertoire "./volumes/refabes" de l'instance que l'on souhaite sauvegarder, ainsi qu'une copie du .env
+Pour sauvegarder les données des différents projets, il faut faire une sauvegarde complète du répertoire ``/opt/pod/refxxxxx-docker/volumes/refabes/`` de l'instance que l'on souhaite sauvegarder, ainsi qu'une copie de son fichier de paramétrage : ``/opt/pod/refxxxxx-docker/.env``
 
 ## Restauration d'une instance
 
-Pour restaurer une instance Openrefine, il faut récuperer la sauvegarde du .env du projet concerné. Puis se mettre dans le repertoire /opt/pod/ et refaire les étapes d'installation.
+Pour restaurer une instance Openrefine, il faut récuperer la sauvegarde du ``.env`` du projet concerné. Puis se mettre dans le repertoire /opt/pod/ et refaire les étapes d'installation.
 
 ```bash
 # adaptez /opt/pod/ avec l'emplacement où vous souhaitez déployer l'application
 cd /opt/pod/
-git clone https://github.com/abes-esr/refabes-docker.git refxxxxxx-docker
+git clone https://github.com/abes-esr/refabes-docker.git refxxxxx-docker
 ```
-Enfin, placer la sauvegarde du .env dans ce répertoire et lancer le docker-compose.yml.
+Enfin, placer la sauvegarde du .env dans ce répertoire ici ``/opt/pod/refxxxxx-docker/.env`` et démarrer l'instance.
 
 ## Restauration d'un projet
 
