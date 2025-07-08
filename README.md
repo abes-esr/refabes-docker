@@ -1,6 +1,6 @@
 # refabes-docker
 
-``refabes-docker`` est un dépôt qui a pour vocation structurer les configurations et les déploiement des différentes instances Openrefine de l'Abes (usage interne).
+``refabes-docker`` est un dépôt qui a pour vocation de structurer les configurations et les déploiement des différentes instances Openrefine de l'Abes (usage interne).
 
 ## Openrefine de l'Abes
 
