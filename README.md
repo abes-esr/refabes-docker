@@ -28,7 +28,7 @@ Le dernier fichier ``.env-dist`` est un template pour la création du fichier ``
 
 Le serveur doit disposer de :
 - Docker
-- Docker compose
+- Docker compose (qui est inclu dans les versions récentes de docker)
 
 ## Installation 
 
